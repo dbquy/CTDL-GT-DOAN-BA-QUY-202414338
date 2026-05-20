@@ -126,7 +126,6 @@ int main() {
 
     
     //Cay Lech Phai
-    
 
     Node* c = tao('-');
 
@@ -149,7 +148,73 @@ int main() {
 
     cout << "\nduyet sau: ";
     sau(c);
+     
+   
+    //Cay Ziczac
+
+    Node* d = tao('-');
+
+    d->right = tao('/');
+
+    d->right->left = tao('+');
+
+    d->right->left->right = tao('*');
+
+    d->right->left->right->left = tao('a');
+    d->right->left->right->right = tao('b');
+
+    cout << "\n\nCAY ZIGZAC\n";
+
+    cout << "\nduyet truoc: ";
+    truoc(d);
+
+    cout << "\nduyet giua: ";
+    giua(d);
+
+    cout << "\nduyet sau: ";
+    sau(d);
+       
     
+    
+    //Cay bieu thuc
+    // (a*b+c)/d - (e*f-h)^g
+
+    Node* bt = tao('-');
+
+    // nhanh trai
+    bt->left = tao('/');
+
+    bt->left->left = tao('+');
+    bt->left->right = tao('d');
+
+    bt->left->left->left = tao('*');
+    bt->left->left->right = tao('c');
+
+    bt->left->left->left->left = tao('a');
+    bt->left->left->left->right = tao('b');
+
+    // nhanh phai
+    bt->right = tao('^');
+
+    bt->right->left = tao('-');
+    bt->right->right = tao('g');
+
+    bt->right->left->left = tao('*');
+    bt->right->left->right = tao('h');
+
+    bt->right->left->left->left = tao('e');
+    bt->right->left->left->right = tao('f');
+
+    cout << "\n\nCAY BIEU THUC\n";
+
+    cout << "\nduyet truoc: ";
+    truoc(bt);
+
+    cout << "\nduyet giua: ";
+    giua(bt);
+
+    cout << "\nduyet sau: ";
+    sau(bt);
 
     return 0;
 }
