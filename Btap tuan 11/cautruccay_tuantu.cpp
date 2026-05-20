@@ -88,6 +88,66 @@ int main() {
     cout << "7 : " << c[7] << endl;
     cout << "15 : " << c[15] << endl;
     
+    //Cay zigzac
+
+    char d[20] = {};
+
+    d[1] = 'A';
+    d[3] = 'B';
+    d[6] = 'C';
+    d[13] = 'D';
+
+    cout << "\nCAY ZIGZAC\n";
+
+    cout << "1 : " << d[1] << endl;
+    cout << "3 : " << d[3] << endl;
+    cout << "6 : " << d[6] << endl;
+    cout << "13 : " << d[13] << endl;
+
+   //Cay bieu thuc
+    // (a*b+c)/d - (e*f-h)^g
+
+
+    char e[50] = {};
+
+    // goc
+    e[1] = '-';
+
+    // nhanh trai
+    e[2] = '/';
+    e[4] = '+';
+    e[8] = '*';
+
+    e[16] = 'a';
+    e[17] = 'b';
+
+    e[9] = 'c';
+
+    e[5] = 'd';
+
+    // nhanh phai
+    e[3] = '^';
+
+    e[6] = '-';
+    e[12] = '*';
+
+    e[24] = 'e';
+    e[25] = 'f';
+
+    e[13] = 'h';
+
+    e[7] = 'g';
+
+    cout << "\nCAY BIEU THUC\n";
+
+    cout << "\nduyet truoc: ";
+    truoc(e, 1);
+
+    cout << "\nduyet giua: ";
+    giua(e, 1);
+
+    cout << "\nduyet sau: ";
+    sau(e, 1);
 
        return 0;
 }
