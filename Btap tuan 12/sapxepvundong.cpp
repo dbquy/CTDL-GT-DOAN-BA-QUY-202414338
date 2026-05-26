@@ -30,7 +30,7 @@ void vundong(int a[], int n, int i)
         max = right;
     }
 
-    //neu can doi cho
+ //neu can doi cho
     if(max != i)
     {
         int temp = a[i];
@@ -41,7 +41,7 @@ void vundong(int a[], int n, int i)
         cout << "Trang thai sau khi doi: ";
         inMang(a, n);
 
-        // vun tiep nhanh con
+ // vun tiep nhanh con
         vundong(a, n, max);
     }
 }
@@ -49,8 +49,7 @@ void vundong(int a[], int n, int i)
 void heapSort(int a[], int n)
 {
     cout << "\nCac buoc tao max heap\n";
-
-    // tao max heap
+ // tao max heap
     for(int i = n / 2; i >= 1; i--)
     {
         cout << "\nVun dong tai node " << i << endl;
@@ -66,7 +65,7 @@ void heapSort(int a[], int n)
 
     cout << "\nCac buoc sap xep\n";
 
-    // sap xep
+ // sap xep
     for(int i = n; i >= 2; i--)
     {
         // doi root voi phan tu cuoi
@@ -88,6 +87,34 @@ void heapSort(int a[], int n)
 
 int main()
 {
-    
+//Cay 1 (cay trong slide)
+
+    int a[] = {0, 4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+
+    int n1 = 10;
+
+    cout << "\nCAY 1\n";
+
+    cout << "Trang thai ban dau:\n";
+    inMang(a, n1);
+
+    heapSort(a, n1);
+
+    cout << "\nKet qua cuoi:\n";
+    inMang(a, n1);
+
+
+//Cay 2 (cay tren bang)
+    int b[] = {0, 11, 54, 32, 106, 38, 78, 203, 16, 84, 17, 39, 15};
+    int n2 = 12;
+
+    cout << "\n CAY 2\n";
+
+    cout << "Trang thai ban dau:\n";
+    inMang(b, n2);
+
+    heapSort(b, n2);
+    cout << "\nKet qua cuoi:\n";
+    inMang(b, n2);
     return 0;
 }
