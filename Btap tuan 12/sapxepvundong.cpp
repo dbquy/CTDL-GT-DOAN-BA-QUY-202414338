@@ -45,7 +45,45 @@ void vundong(int a[], int n, int i)
         vundong(a, n, max);
     }
 }
+//heap sort
+void heapSort(int a[], int n)
+{
+    cout << "\nCac buoc tao max heap\n";
 
+    // tao max heap
+    for(int i = n / 2; i >= 1; i--)
+    {
+        cout << "\nVun dong tai node " << i << endl;
+
+        vundong(a, n, i);
+
+        cout << "Trang thai hien tai: ";
+        inMang(a, n);
+    }
+
+    cout << "\nMax Heap thu duoc:\n";
+    inMang(a, n);
+
+    cout << "\nCac buoc sap xep\n";
+
+    // sap xep
+    for(int i = n; i >= 2; i--)
+    {
+        // doi root voi phan tu cuoi
+        int temp = a[1];
+        a[1] = a[i];
+        a[i] = temp;
+
+        cout << "\nDoi root voi phan tu cuoi:\n";
+        inMang(a, n);
+
+        // vun lai heap
+        vundong(a, i - 1, 1);
+
+        cout << "Trang thai sau khi vun lai:\n";
+        inMang(a, n);
+    }
+}
 
 
 int main()
