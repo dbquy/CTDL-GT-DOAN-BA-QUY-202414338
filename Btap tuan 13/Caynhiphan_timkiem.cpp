@@ -9,7 +9,7 @@ struct Node {
 };
 
 // tao nut moi
-Node* taoNut(int x) {
+Node* taoNode(int x) {
     Node* p = new Node;
 
     p->data = x;
@@ -17,6 +17,33 @@ Node* taoNut(int x) {
     p->right = NULL;
 
     return p;
+}
+// them mot gia tri vao cay
+void themNode(Node *&root, int x)
+{
+    // neu cay rong
+    if(root == NULL)
+    {
+        root = taoNode(x);
+        return;
+    }
+    if(root == NULL)
+        return NULL;
+
+
+    // nho hon hoac bang thi qua trai
+    if(x <= root->data)
+        themNode(root->left, x);
+         if(root->data == x)
+        return root;
+
+    // lon hon thi qua phai
+    else
+        themNode(root->right, x);
+        if(x <= root->data)
+        return timKiem(root->left, x);
+    else
+        return timKiem(root->right, x);
 }
 
 
