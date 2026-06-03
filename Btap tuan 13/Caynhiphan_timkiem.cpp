@@ -27,23 +27,13 @@ void themNode(Node *&root, int x)
         root = taoNode(x);
         return;
     }
-    if(root == NULL)
-        return NULL;
-
-
     // nho hon hoac bang thi qua trai
     if(x <= root->data)
         themNode(root->left, x);
-         if(root->data == x)
-        return root;
-
     // lon hon thi qua phai
     else
         themNode(root->right, x);
-        if(x <= root->data)
-        return timKiem(root->left, x);
-    else
-        return timKiem(root->right, x);
+       
 }
 
 
