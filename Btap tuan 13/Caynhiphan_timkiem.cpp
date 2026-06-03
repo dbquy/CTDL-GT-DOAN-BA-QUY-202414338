@@ -48,7 +48,25 @@ Node* timKiem(Node *root, int x)
 
 int main() {
 
-    
+    int a[] = {2001, 2002, 2006, 2007, 2003, 2004, 2005, 2001, 1999, 2004};
+
+    int n = sizeof(a) / sizeof(a[0]);
+
+    Node *root = NULL;
+
+    // tao cay
+    for(int i = 0; i < n; i++)
+    {
+        themNode(root, a[i]);
+    }
+    int nam_sinh = 2004;
+
+    Node *kq = timKiem(root, nam_sinh);
+
+    if(kq != NULL)
+        cout << "Tim thay nam sinh " << nam_sinh;
+    else
+        cout << "Khong tim thay nam sinh " << nam_sinh;
 
     return 0;
 }
