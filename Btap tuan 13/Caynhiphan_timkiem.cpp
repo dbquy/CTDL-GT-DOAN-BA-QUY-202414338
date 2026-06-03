@@ -41,9 +41,7 @@ Node* timKiem(Node *root, int x)
         return root;
 
     if(x <= root->data)
-        return timKiem(root->right, x);
-    if(root == NULL)  root = taoNode(x);
-    return;
+        return timKiem(root->left, x);
     
     return timKiem(root->right, x);
 }
