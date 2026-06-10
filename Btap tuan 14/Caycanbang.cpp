@@ -43,11 +43,20 @@ Node* rotateRight(Node* y) {
 
     y->height = max(height(y->left), height(y->right)) + 1;
     x->height = max(height(x->left), height(x->right)) + 1;
-    
+    return x;
+}
+// quay trái
+Node* rotateLeft(Node* x) {
+    Node* y = x->right;
+    Node* T = y->left;
+
+    y->left = x;
+    x->right = T;
+
     x->height = max(height(x->left), height(x->right)) + 1;
     y->height = max(height(y->left), height(y->right)) + 1;
 
-    return x;
+    return y;
 }
 int main() {
 
