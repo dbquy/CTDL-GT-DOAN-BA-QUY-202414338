@@ -107,8 +107,29 @@ Node* insert(Node* root, int x) {
 
     return root;
 }
-int main(){
+// duyệt giữa LNR
+void Duyet_giua(Node* root) {
+    if (root != NULL) {
+        Duyet_giua(root->left);
+        cout << root->data << " ";
+        Duyet_giua(root->right);
+    }
+}
 
+int main() {
+
+    int a[] = {32, 51, 27, 83, 96, 11, 45, 75, 66};
+    int n = sizeof(a) / sizeof(a[0]);
+
+    Node* root = NULL;
+
+    // thêm các phần tử vào cây AVL
+    for (int i = 0; i < n; i++) {
+        root = insert(root, a[i]);
+    }
+
+    cout << "Cac phan tu tren cay AVL sau khi duyet LNR:\n";
+    Duyet_giua(root);
 
     return 0;
 }
