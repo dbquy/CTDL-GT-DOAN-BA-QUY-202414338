@@ -34,7 +34,7 @@ Node* createNode(int x) {
     return p;
 }
 // quay phải
-Node* rotateRight(Node* y) {
+Node* XoayPhai(Node* y) {
     Node* x = y->left;
     Node* T = x->right;
 
@@ -46,7 +46,7 @@ Node* rotateRight(Node* y) {
     return x;
 }
 // quay trái
-Node* rotateLeft(Node* x) {
+Node* XoayTrai(Node* x) {
     Node* y = x->right;
     Node* T = y->left;
 
@@ -58,7 +58,56 @@ Node* rotateLeft(Node* x) {
 
     return y;
 }
-int main() {
+// tính hệ số cân bằng
+int getBalance(Node* p) {
+    if (p == NULL)
+        return 0;
+
+    return height(p->left) - height(p->right);
+}
+
+// thêm vào cây AVL
+Node* insert(Node* root, int x) {
+
+    if (root == NULL)
+        return createNode(x);
+
+    if (x < root->data)
+        root->left = insert(root->left, x);
+
+    else if (x > root->data)
+        root->right = insert(root->right, x);
+
+    else
+        return root;
+
+    root->height =
+        max(height(root->left), height(root->right)) + 1;
+
+    int balance = getBalance(root);
+    // Left Left
+    if (balance > 1 && x < root->left->data)
+        return XoayPhai(root);
+
+    // Right right
+    if (balance < -1 && x > root->right->data)
+        return XoayTrai(root);
+
+    // Left right
+    if (balance > 1 && x > root->left->data) {
+        root->left = XoayTrai(root->left);
+        return XoayPhai(root);
+    }
+
+    // Right Left
+    if (balance < -1 && x < root->right->data) {
+        root->right = XoayPhai(root->right);
+        return XoayTrai(root);
+    }
+
+    return root;
+}
+int main(){
 
 
     return 0;
