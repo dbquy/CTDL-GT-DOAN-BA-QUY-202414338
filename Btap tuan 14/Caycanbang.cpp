@@ -41,6 +41,9 @@ Node* rotateRight(Node* y) {
     x->right = y;
     y->left = T;
 
+    y->height = max(height(y->left), height(y->right)) + 1;
+    x->height = max(height(x->left), height(x->right)) + 1;
+    
     x->height = max(height(x->left), height(x->right)) + 1;
     y->height = max(height(y->left), height(y->right)) + 1;
 
