@@ -8,8 +8,21 @@ struct Node {
     Node* right;
     int height;
 };
+// chiều cao của cây
+int height(Node* p) {
+    if (p == NULL)
+        return 0;
+    return p->height;
+}
 
-//tao nút mới
+// tìm số lớn hơn
+int max(int a, int b) {
+    if (a > b)
+        return a;
+    return b;
+}
+
+// tao nút mới
 Node* createNode(int x) {
     Node* p = new Node;
 
@@ -17,6 +30,7 @@ Node* createNode(int x) {
     p->left = NULL;
     p->right = NULL;
     p->height = 1;
+
     return p;
 }
 int main() {
