@@ -33,14 +33,24 @@ Node* taoNode(int x)
 
     return p;
 }
-Node* taoNode(int x)
+void themCuoi(Node *&head, int x)
 {
-    Node *p = new Node;
+    Node *p = taoNode(x);
 
-    p->data = x;
-    p->next = NULL;
+    if(head == NULL)
+    {
+        head = p;
+        return;
+    }
 
-    return p;
+    Node *q = head;
+
+    while(q->next != NULL)
+    {
+        q = q->next;
+    }
+
+    q->next = p;
 }
 
 int main()
