@@ -57,6 +57,41 @@ void themCanh(int u, int v)
     themCuoi(ds[u], v);
     themCuoi(ds[v], u);
 }
+void duyettheochieurong(int start)
+{
+    bool daXet[11] = {false};
+
+    queue<int> q;
+
+    daXet[start] = true;
+    q.push(start);
+
+    int stt = 1;
+
+    while(!q.empty())
+    {
+        int u = q.front();
+        q.pop();
+
+        cout << stt++ << ". " << ten[u] << endl;
+
+        Node *p = ds[u];
+
+        while(p != NULL)
+        {
+            int v = p->data;
+
+            if(daXet[v] == false)
+            {
+                daXet[v] = true;
+                q.push(v);
+            }
+
+            p = p->next;
+        }
+    }
+}
+
 int main()
 {
     
