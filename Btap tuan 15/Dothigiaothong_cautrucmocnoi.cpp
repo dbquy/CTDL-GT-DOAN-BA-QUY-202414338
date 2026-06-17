@@ -52,7 +52,11 @@ void themCuoi(Node *&head, int x)
 
     q->next = p;
 }
-
+void themCanh(int u, int v)
+{
+    themCuoi(ds[u], v);
+    themCuoi(ds[v], u);
+}
 int main()
 {
     
