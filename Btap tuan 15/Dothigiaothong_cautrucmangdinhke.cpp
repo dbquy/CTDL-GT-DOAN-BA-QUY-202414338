@@ -54,7 +54,29 @@ void duyettheochieurong(int start)
 }
 
 int main()
-{
-    
+ {
+    themCanh(0,1);   // Ha Noi - Thai Nguyen
+    themCanh(0,2);   // Ha Noi - Bac Ninh
+    themCanh(0,6);   // Ha Noi - Hai Duong
+    themCanh(0,8);   // Ha Noi - Phu Ly
+    themCanh(0,9);   // Ha Noi - Hoa Binh
+    themCanh(0,10);  // Ha Noi - Son Tay
+   
+    themCanh(2,3);   // Bac Ninh - Bac Giang
+    themCanh(2,4);   // Bac Ninh - Uong Bi
+   
+    themCanh(3,4);   // Bac Giang - Uong Bi
+   
+    themCanh(4,5);   // Uong Bi - Hai Phong
+   
+    themCanh(5,6);   // Hai Phong - Hai Duong
+   
+    themCanh(6,7);   // Hai Duong - Hung Yen
+   
+    themCanh(7,8);   // Hung Yen - Phu Ly
+    cout << "Thu tu BFS bat dau tu Ha Noi:\n\n";
+    duyettheochieurong(0);
+
+
     return 0;
 }
