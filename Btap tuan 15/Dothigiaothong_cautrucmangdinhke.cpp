@@ -35,16 +35,6 @@ void duyettheochieurong(int start)
     q.push(start);
 
     int stt = 1;
-    while(p != NULL)
-        {
-            int v = p->data;
-
-            if(daXet[v] == false)
-            {
-                daXet[v] = true;
-                q.push(v);
-            }
-
     while (!q.empty())
     {
         int u = q.front();
