@@ -24,8 +24,24 @@ string ten[11] =
     "Hoa Binh",
     "Son Tay"
 };
+Node* taoNode(int x)
+{
+    Node *p = new Node;
 
+    p->data = x;
+    p->next = NULL;
 
+    return p;
+}
+Node* taoNode(int x)
+{
+    Node *p = new Node;
+
+    p->data = x;
+    p->next = NULL;
+
+    return p;
+}
 
 int main()
 {
