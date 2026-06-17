@@ -94,7 +94,38 @@ void duyettheochieurong(int start)
 
 int main()
 {
-    
+      for(int i = 0; i < 11; i++)
+        ds[i] = NULL;
+
+    // Ha Noi
+    themCanh(0,1);
+    themCanh(0,2);
+    themCanh(0,6);
+    themCanh(0,8);
+    themCanh(0,9);
+    themCanh(0,10);
+
+    // Bac Ninh
+    themCanh(2,3);
+    themCanh(2,4);
+
+    // Bac Giang
+    themCanh(3,4);
+
+    // Uong Bi
+    themCanh(4,5);
+
+    // Hai Phong
+    themCanh(5,6);
+
+    // Hai Duong
+    themCanh(6,7);
+
+    // Hung Yen
+    themCanh(7,8);
+     cout << "Thu tu duyet theo chieu rong bat dau tu Ha Noi:\n\n";
+
+    duyettheochieurong(0);
 
     return 0;
 }
