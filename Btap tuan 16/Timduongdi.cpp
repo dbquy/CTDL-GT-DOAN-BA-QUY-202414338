@@ -23,6 +23,8 @@ string ten[11] =
     "Hoa Binh",
     "Son Tay"
 };
+bool daXet[11]; // danh dau dinh da duoc tham
+int truoc[11]; // luu dinh di truoc
 
 // tao node moi
 Node *taoNode(int x)
@@ -50,4 +52,44 @@ void themCuoi(Node *&head, int x)
         q = q->next;
 
     q->next = p;
+}
+// them canh
+void themCanh(int u, int v)
+{
+    themCuoi(ds[u], v);
+    themCuoi(ds[v], u);
+}
+
+// BFS tim duong di ngan nhat
+void BFS(int start)
+{
+    int q[100];
+
+    int front = 0;
+    int rear = -1;
+
+    daXet[start] = true;
+    q[++rear] = start;
+
+    while(front <= rear)
+    {
+        int u = q[front++];
+
+        Node *p = ds[u];
+
+        while(p != NULL)
+        {
+            int v = p->data;
+
+            if(!daXet[v])
+            {
+                daXet[v] = true;
+                truoc[v] = u;
+
+                q[++rear] = v;
+            }
+
+            p = p->next;
+        }
+    }
 }
