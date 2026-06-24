@@ -65,15 +65,15 @@ void BFS(int start)
 {
     int q[100];
 
-    int front = 0;
-    int rear = -1;
+    int phiatruoc = 0;
+    int phiasau = -1;
 
     daXet[start] = true;
-    q[++rear] = start;
+    q[++phiasau] = start;
 
-    while(front <= rear)
+    while(phiatruoc <= phiasau)
     {
-        int u = q[front++];
+        int u = q[phiatruoc++];
 
         Node *p = ds[u];
 
@@ -86,10 +86,42 @@ void BFS(int start)
                 daXet[v] = true;
                 truoc[v] = u;
 
-                q[++rear] = v;
+                q[++phiasau] = v;
             }
 
             p = p->next;
         }
     }
+}
+// in duong di
+void inDuongDi(int s, int t)
+{
+    if(!daXet[t])
+    {
+        cout << "Khong ton tai duong di!";
+        return;
+    }
+
+    int duongdi[20];
+    int n = 0;
+
+    while(t != s)
+    {
+        duongdi[n++] = t;
+        t = truoc[t];
+    }
+
+    duongdi[n++] = s;
+
+    cout << "\nDuong di tu Ha Noi den Uong Bi:\n";
+
+    for(int i = n - 1; i >= 0; i--)
+    {
+        cout << ten[duongdi[i]];
+
+        if(i > 0)
+            cout << " -> ";
+    }
+
+    cout << "\nSo canh di qua: " << n - 1;
 }
