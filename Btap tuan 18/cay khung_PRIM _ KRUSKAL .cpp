@@ -214,3 +214,33 @@ void Kruskal(DoThi g){
     cout<<"\n KRUSKAL\n";
 
     int dem=0;
+     for(int i=0;i<m;i++){
+
+        int r1=TimCha(cha,ds[i].dau);
+        int r2=TimCha(cha,ds[i].cuoi);
+
+        if(r1!=r2){
+
+            cout<<"Lay canh: "
+                <<TenTinh[ds[i].dau]
+                <<" - "
+                <<TenTinh[ds[i].cuoi]
+                <<" = "
+                <<ds[i].ts<<endl;
+
+            cha[r1]=r2;
+
+            Cay[ds[i].dau][ds[i].cuoi]=ds[i].ts;
+            Cay[ds[i].cuoi][ds[i].dau]=ds[i].ts;
+
+            dem++;
+
+            if(dem==g.n-1)
+                break;
+        }
+    }
+
+    cout<<"\nMa tran cay khung Kruskal:\n";
+    InMaTran(Cay,g.n);
+
+}
