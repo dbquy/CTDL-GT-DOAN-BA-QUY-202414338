@@ -123,7 +123,7 @@ void Prim(DoThi g){
             Cay[i][j]=0;
  daCo[9]=true;          // Bat dau tu Hoa Binh
 
-    cout<<"\n========== PRIM ==========\n";
+    cout<<"\nPRIM \n";
 
     int dem=0;
 
@@ -190,3 +190,27 @@ void Kruskal(DoThi g){
             }
         }
     }
+     for(int i=0;i<m-1;i++){
+        for(int j=i+1;j<m;j++){
+            if(ds[i].ts>ds[j].ts){
+                Canh t=ds[i];
+                ds[i]=ds[j];
+                ds[j]=t;
+            }
+        }
+    }
+
+    int cha[MAX];
+
+    for(int i=0;i<g.n;i++)
+        cha[i]=i;
+
+    int Cay[MAX][MAX];
+
+    for(int i=0;i<g.n;i++)
+        for(int j=0;j<g.n;j++)
+            Cay[i][j]=0;
+
+    cout<<"\n KRUSKAL\n";
+
+    int dem=0;
