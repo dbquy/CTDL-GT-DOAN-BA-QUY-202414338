@@ -244,3 +244,46 @@ void Kruskal(DoThi g){
     InMaTran(Cay,g.n);
 
 }
+int main(){
+
+    DoThi g;
+
+    TaoDoThi(g,MAX);
+
+    int data[][3]={
+        {0,6,1},
+        {6,7,2},
+        {7,8,3},
+        {0,8,4},
+        {0,9,5},
+        {0,10,6},
+        {0,1,7},
+        {0,2,8},
+        {2,3,9},
+        {3,4,10},
+        {2,4,11},
+        {4,5,12},
+        {6,5,13}
+    };
+
+    int soCanh=sizeof(data)/sizeof(data[0]);
+
+    for(int i=0;i<soCanh;i++){
+        ThemCanh(g,
+                 data[i][0],
+                 data[i][1],
+                 data[i][2]);
+    }
+
+    cout<<" MA TRAN DO THI \n";
+    InMaTran(g.a,g.n);
+
+    cout<<"\nDIJKSTRA \n";
+    Dijkstra(g);
+
+    Prim(g);
+
+    Kruskal(g);
+
+    return 0;
+}
