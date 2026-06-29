@@ -113,3 +113,11 @@ void Dijkstra(DoThi g){
 
     cout<<"\nTong trong so = "<<d[dich]<<endl;
 }
+void Prim(DoThi g){
+
+    bool daCo[MAX]={false};
+    int Cay[MAX][MAX];
+
+    for(int i=0;i<g.n;i++)
+        for(int j=0;j<g.n;j++)
+            Cay[i][j]=0;
