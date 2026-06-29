@@ -175,3 +175,18 @@ int TimCha(int cha[],int x){
 
     return x;
 }
+void Kruskal(DoThi g){
+
+    Canh ds[30];
+    int m=0;
+
+    for(int i=0;i<g.n;i++){
+        for(int j=i+1;j<g.n;j++){
+            if(g.a[i][j]>0){
+                ds[m].dau=i;
+                ds[m].cuoi=j;
+                ds[m].ts=g.a[i][j];
+                m++;
+            }
+        }
+    }
