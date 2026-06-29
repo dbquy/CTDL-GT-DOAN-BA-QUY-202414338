@@ -52,3 +52,64 @@ void Dijkstra(DoThi g){
         truoc[i]=-1;
         chon[i]=false;
     }
+     int xp=9;      // Hoa Binh
+    int dich=4;    // Uong Bi
+
+    d[xp]=0;
+
+    while(true){
+
+        int u=-1;
+        int Min=VC;
+
+        for(int i=0;i<g.n;i++){
+            if(!chon[i] && d[i]<Min){
+                Min=d[i];
+                u=i;
+            }
+        }
+
+        if(u==-1) break;
+
+        chon[u]=true;
+
+        if(u==dich) break;
+
+        for(int v=0;v<g.n;v++){
+            if(g.a[u][v]>0 && !chon[v]){
+                if(d[v] > d[u]+g.a[u][v]){
+                    d[v]=d[u]+g.a[u][v];
+                    truoc[v]=u;
+                }
+            }
+        }
+
+        cout<<"\nChon dinh "<<TenTinh[u]<<endl;
+
+        cout<<"Khoang cach: ";
+        for(int i=0;i<g.n;i++){
+            if(d[i]==VC) cout<<"INF ";
+            else cout<<d[i]<<" ";
+        }
+        cout<<endl;
+    }
+
+    cout<<"\nDuong di ngan nhat:\n";
+
+    int stack[MAX];
+    int top=0;
+
+    int x=dich;
+
+    while(x!=-1){
+        stack[top++]=x;
+        x=truoc[x];
+    }
+
+    for(int i=top-1;i>=0;i--){
+        cout<<TenTinh[stack[i]];
+        if(i) cout<<" -> ";
+    }
+
+    cout<<"\nTong trong so = "<<d[dich]<<endl;
+}
