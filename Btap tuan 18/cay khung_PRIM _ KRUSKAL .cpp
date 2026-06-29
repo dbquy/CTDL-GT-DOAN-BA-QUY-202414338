@@ -42,3 +42,13 @@ void InMaTran(int a[MAX][MAX],int n){
         cout<<endl;
     }
 }
+void Dijkstra(DoThi g){
+    int d[MAX];
+    int truoc[MAX];
+    bool chon[MAX];
+
+    for(int i=0;i<g.n;i++){
+        d[i]=VC;
+        truoc[i]=-1;
+        chon[i]=false;
+    }
