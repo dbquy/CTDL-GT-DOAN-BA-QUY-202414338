@@ -29,3 +29,16 @@ void ThemCanh(DoThi &g,int u,int v,int w){
     g.a[u][v]=w;
     g.a[v][u]=w;
 }
+void InMaTran(int a[MAX][MAX],int n){
+    cout<<setw(5)<<" ";
+    for(int i=0;i<n;i++)
+        cout<<setw(5)<<TenTinh[i];
+    cout<<endl;
+
+    for(int i=0;i<n;i++){
+        cout<<setw(5)<<TenTinh[i];
+        for(int j=0;j<n;j++)
+            cout<<setw(5)<<a[i][j];
+        cout<<endl;
+    }
+}
