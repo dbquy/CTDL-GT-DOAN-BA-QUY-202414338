@@ -121,3 +121,57 @@ void Prim(DoThi g){
     for(int i=0;i<g.n;i++)
         for(int j=0;j<g.n;j++)
             Cay[i][j]=0;
+ daCo[9]=true;          // Bat dau tu Hoa Binh
+
+    cout<<"\n========== PRIM ==========\n";
+
+    int dem=0;
+
+    while(dem<g.n-1){
+
+        int Min=VC;
+        int x=-1,y=-1;
+
+        for(int i=0;i<g.n;i++){
+            if(daCo[i]){
+                for(int j=0;j<g.n;j++){
+                    if(!daCo[j] && g.a[i][j]>0){
+                        if(g.a[i][j]<Min){
+                            Min=g.a[i][j];
+                            x=i;
+                            y=j;
+                        }
+                    }
+                }
+            }
+        }
+
+        if(x==-1) break;
+
+        cout<<"Lay canh: "
+            <<TenTinh[x]
+            <<" - "
+            <<TenTinh[y]
+            <<" = "
+            <<Min<<endl;
+
+        daCo[y]=true;
+
+        Cay[x][y]=Min;
+        Cay[y][x]=Min;
+
+        dem++;
+    }
+
+    cout<<"\nMa tran cay khung Prim:\n";
+    InMaTran(Cay,g.n);
+
+}
+
+int TimCha(int cha[],int x){
+
+    while(cha[x]!=x)
+        x=cha[x];
+
+    return x;
+}
