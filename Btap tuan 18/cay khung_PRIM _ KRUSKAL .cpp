@@ -25,3 +25,7 @@ void TaoDoThi(DoThi &g, int n) {
         for(int j=0;j<n;j++)
             g.a[i][j]=0;
 }
+void ThemCanh(DoThi &g,int u,int v,int w){
+    g.a[u][v]=w;
+    g.a[v][u]=w;
+}
